@@ -5,27 +5,18 @@
  */
 package laboratorio_7_angelrisso;
 
-public class cajero {
+public class Cliente {
+    String nombre;
+    int edad;
+    Ordenes ord;
 
-    private String nombre;
-    private int ID;
-    VentanaCajero ve;
-
-    public cajero() {
+    public Cliente() {
     }
 
-    public cajero(String nombre, int ID, VentanaCajero ve) {
+    public Cliente(String nombre, int edad, Ordenes ord) {
         this.nombre = nombre;
-        this.ID = ID;
-        this.ve = ve;
-    }
-
-    public VentanaCajero getVe() {
-        return ve;
-    }
-
-    public void setVe(VentanaCajero ve) {
-        this.ve = ve;
+        this.edad = edad;
+        this.ord = ord;
     }
 
     public String getNombre() {
@@ -36,17 +27,25 @@ public class cajero {
         this.nombre = nombre;
     }
 
-    public int getID() {
-        return ID;
+    public int getEdad() {
+        return edad;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public Ordenes getOrd() {
+        return ord;
+    }
+
+    public void setOrd(Ordenes ord) {
+        this.ord = ord;
     }
 
     @Override
     public String toString() {
         return nombre;
     }
-
+    
 }
