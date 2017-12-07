@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Ordenes {
     private ArrayList<Producto>productos=new ArrayList();
-
+    
     public Ordenes() {
     }
 
@@ -17,10 +17,14 @@ public class Ordenes {
         return productos;
     }
 
-    public void setProductos(ArrayList<Producto> productos) {
-        this.productos = productos;
-    }
+    
     public void setProductos(Producto p) {
         this.productos.add(p);
     }
+
+    @Override
+    public String toString() {
+        return productos.toString();
+    }
+    
 }
