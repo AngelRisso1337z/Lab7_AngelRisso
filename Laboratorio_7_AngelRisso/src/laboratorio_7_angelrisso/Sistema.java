@@ -415,19 +415,10 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_aggOrdenActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        cajero c;
-        DefaultComboBoxModel modeloCajero = (DefaultComboBoxModel) cb_productos.getModel();
-        c = (cajero) modeloCajero.getSelectedItem();
-
-        DefaultComboBoxModel modeloProducto = (DefaultComboBoxModel) cb_productos.getModel();
-        Producto tp = (Producto) modeloProducto.getSelectedItem();
-        modeloProducto.removeElement(tp);
-        cliente.agregarOrden(c, tp);
-
-//            clienteGlobal.getOrden().setCajero(tempCajero);
-//            clienteGlobal.getOrden().agregarProducto(tempProducto);
-//            clienteGlobal.getOrden().setCliente(clienteGlobal);
-        System.out.println(cliente.getOrd().getProductos());
+        
+            cliente.start();
+            cliente.continuar();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

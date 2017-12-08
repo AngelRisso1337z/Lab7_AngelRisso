@@ -7,7 +7,7 @@ package laboratorio_7_angelrisso;
 
 import java.util.ArrayList;
 
-public class Cliente {
+public class Cliente extends Thread {
 
     private String nombre;
     private int edad;
@@ -35,6 +35,12 @@ public class Cliente {
     public ArrayList<Ordenes> getOrdenes() {
         return ordenes;
     }
+
+    public void continuar() {
+        avanzar = true;
+    }
+
+
 
     public void setOrdenes(ArrayList<Ordenes> ordenes) {
         this.ordenes = ordenes;
@@ -81,7 +87,19 @@ public class Cliente {
             tempOrden.setCliente(this);
             ordenes.add(tempOrden);
         }
-        System.out.println(ordenes);
-        System.out.println(ordenes.get(0).getCajero().getNombre());
+    }
+
+    @Override
+    public void run() {
+        bandera = true;
+        while (true) {
+            if (avanzar) {
+                for (Ordenes o : ordenes) {
+                    o.start();
+                    o.seguir();
+                }
+                avanzar = false;
+            }
+        }
     }
 }
