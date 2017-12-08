@@ -37,6 +37,12 @@ public class Sistema extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        tf_cajeros = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        bt_aggCaj = new javax.swing.JButton();
+        tf_id = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         tf_nomProd = new javax.swing.JTextField();
@@ -45,12 +51,6 @@ public class Sistema extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tf_carga = new javax.swing.JTextField();
         bt_aggProd = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        tf_cajeros = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        bt_aggCaj = new javax.swing.JButton();
-        tf_id = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         tf_cliente = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -131,6 +131,55 @@ public class Sistema extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel4.setText("Cajero nuevo");
+
+        bt_aggCaj.setText("Añadir");
+        bt_aggCaj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_aggCajActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Identidad");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(242, 242, 242)
+                        .addComponent(bt_aggCaj, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel11))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_id, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addComponent(tf_cajeros))))
+                .addContainerGap(222, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_cajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(68, 68, 68)
+                .addComponent(bt_aggCaj)
+                .addContainerGap(155, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Cajeros", jPanel3);
+
         jLabel5.setText("Nombre");
 
         jLabel6.setText("Precio");
@@ -192,55 +241,6 @@ public class Sistema extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Productos", jPanel1);
 
-        jLabel4.setText("Cajero nuevo");
-
-        bt_aggCaj.setText("Añadir");
-        bt_aggCaj.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_aggCajActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setText("Identidad");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(242, 242, 242)
-                        .addComponent(bt_aggCaj, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel11))
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_id, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                            .addComponent(tf_cajeros))))
-                .addContainerGap(222, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_cajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGap(68, 68, 68)
-                .addComponent(bt_aggCaj)
-                .addContainerGap(155, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Cajeros", jPanel3);
-
         jLabel1.setText("Cliente");
 
         jLabel2.setText("Productos");
@@ -248,6 +248,11 @@ public class Sistema extends javax.swing.JFrame {
         jLabel3.setText("Cajero");
 
         bt_aggOrden.setText("Agregar a orden");
+        bt_aggOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_aggOrdenActionPerformed(evt);
+            }
+        });
 
         bt_orden.setText("Ordenar");
         bt_orden.addActionListener(new java.awt.event.ActionListener() {
@@ -257,6 +262,11 @@ public class Sistema extends javax.swing.JFrame {
         });
 
         jButton1.setText("COMPRAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel12.setText("edad");
 
@@ -372,6 +382,7 @@ public class Sistema extends javax.swing.JFrame {
         int id = Integer.parseInt(tf_id.getText());
         VentanaCajero ve = new VentanaCajero();
         c = new cajero(nombre, id, ve);
+
         mod.addElement(c);
         cb_cajeros.setModel(mod);
         tf_cajeros.setText("");
@@ -382,11 +393,42 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_aggCajActionPerformed
 
     private void bt_ordenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_ordenActionPerformed
-       int edad=Integer.parseInt(tf_edad.getText());
-       String nombre=tf_cliente.getText();
-       ord=new Ordenes();
-       cliente=new Cliente(nombre, edad, ord);
+        int edad = Integer.parseInt(tf_edad.getText());
+        String nombre = tf_cliente.getText();
+        ord = new Ordenes();
+        cliente = new Cliente(nombre, edad);
+
+        tf_cliente.setText("");
+        tf_edad.setText("");
+
     }//GEN-LAST:event_bt_ordenActionPerformed
+
+    private void bt_aggOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_aggOrdenActionPerformed
+        cajero tempCajero;
+        DefaultComboBoxModel modeloCajero = (DefaultComboBoxModel) cb_cajeros.getModel();
+        tempCajero = (cajero) modeloCajero.getSelectedItem();
+
+        DefaultComboBoxModel modeloProducto = (DefaultComboBoxModel) cb_productos.getModel();
+        Producto tempProducto = (Producto) modeloProducto.getSelectedItem();
+        modeloProducto.removeElement(tempProducto);
+        cliente.agregarOrden(tempCajero, tempProducto);
+    }//GEN-LAST:event_bt_aggOrdenActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        cajero c;
+        DefaultComboBoxModel modeloCajero = (DefaultComboBoxModel) cb_productos.getModel();
+        c = (cajero) modeloCajero.getSelectedItem();
+
+        DefaultComboBoxModel modeloProducto = (DefaultComboBoxModel) cb_productos.getModel();
+        Producto tp = (Producto) modeloProducto.getSelectedItem();
+        modeloProducto.removeElement(tp);
+        cliente.agregarOrden(c, tp);
+
+//            clienteGlobal.getOrden().setCajero(tempCajero);
+//            clienteGlobal.getOrden().agregarProducto(tempProducto);
+//            clienteGlobal.getOrden().setCliente(clienteGlobal);
+        System.out.println(cliente.getOrd().getProductos());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

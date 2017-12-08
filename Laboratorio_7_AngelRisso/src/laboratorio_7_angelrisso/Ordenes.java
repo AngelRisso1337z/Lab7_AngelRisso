@@ -13,9 +13,11 @@ public class Ordenes extends Thread {
     private cajero cajeros;
     private Producto productos;
     private ArrayList<Producto> producto;
-
+    private boolean avanzar;
+    private boolean bandera;
+    
     public Ordenes() {
-
+        producto=new ArrayList();
         avanzar = false;
         bandera = false;
 
@@ -23,8 +25,7 @@ public class Ordenes extends Thread {
 
     private Cliente cliente;
 
-    private boolean avanzar;
-    private boolean bandera;
+   
 
     public void seguir() {
         avanzar = true;
@@ -64,6 +65,7 @@ public class Ordenes extends Thread {
 
     public void run() {
         bandera = true;
+        
         while (true) {
             if (avanzar) {
                 System.out.println(productos);

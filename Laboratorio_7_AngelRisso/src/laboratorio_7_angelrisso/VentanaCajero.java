@@ -134,6 +134,8 @@ public class VentanaCajero extends javax.swing.JFrame implements Runnable {
     }// </editor-fold>//GEN-END:initComponents
 
     public void run() {
+        
+        
         new VentanaCajero().setVisible(true);
     }
 

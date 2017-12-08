@@ -5,22 +5,39 @@
  */
 package laboratorio_7_angelrisso;
 
+import java.util.ArrayList;
+
 public class Cliente {
-    String nombre;
-    int edad;
-    Ordenes ord;
+
+    private String nombre;
+    private int edad;
+    private Ordenes ord;
+    private ArrayList<Ordenes> ordenes;
+    private boolean avanzar;
+    public boolean bandera;
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, int edad, Ordenes ord) {
+    public Cliente(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
-        this.ord = ord;
+        ord = new Ordenes();
+        ordenes = new ArrayList<>();
+        avanzar = false;
+        bandera = false;
     }
 
     public String getNombre() {
         return nombre;
+    }
+
+    public ArrayList<Ordenes> getOrdenes() {
+        return ordenes;
+    }
+
+    public void setOrdenes(ArrayList<Ordenes> ordenes) {
+        this.ordenes = ordenes;
     }
 
     public void setNombre(String nombre) {
@@ -47,5 +64,24 @@ public class Cliente {
     public String toString() {
         return nombre;
     }
-    
+
+    public void agregarOrden(cajero c, Producto p) {
+        boolean bandera = false;
+        for (int i = 0; i < ordenes.size(); i++) {
+            if (ordenes.get(i).getCajero().getNombre().equals(c.getNombre())) {
+                bandera = true;
+                ordenes.get(i).agregarProducto(p);
+                ordenes.get(i).setCliente(this);
+            }
+        }
+        if (!bandera) {
+            Ordenes tempOrden = new Ordenes();
+            tempOrden.setCajero(c);
+            tempOrden.agregarProducto(p);
+            tempOrden.setCliente(this);
+            ordenes.add(tempOrden);
+        }
+        System.out.println(ordenes);
+        System.out.println(ordenes.get(0).getCajero().getNombre());
+    }
 }
