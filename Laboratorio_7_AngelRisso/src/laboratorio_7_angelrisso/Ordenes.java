@@ -31,9 +31,7 @@ public class Ordenes extends Thread {
         avanzar = true;
     }
 
-    public void parar() {
-        avanzar = false;
-    }
+    
 
     public Cliente getCliente() {
         return cliente;
@@ -73,21 +71,21 @@ public class Ordenes extends Thread {
                 DefaultTableModel modeloLista = (DefaultTableModel) cajeros.getVe().tb_cosa.getModel();
                 cajeros.getVe().lbl_cajero.setText(cajeros.getNombre());
                 cajeros.getVe().lbl_cliente.setText(cliente.getNombre());
-
+                ArrayList<Producto> algo = new ArrayList<>();
                 for (Producto p : producto) {
                     cajeros.getVe().tf_producto.setText(p.getNombre());
                     try {
                         Thread.sleep(p.getTime() * 1000);
                         Object[] row = new Object[]{p.getNombre(), cliente.getNombre(), p.getTime()};
                         modeloLista.addRow(row);
-                        ;
+                        algo.add(p);
                     } catch (Exception e) {
                     }
                 }
-
+                producto.removeAll(algo);
                 avanzar = false;
                 try {
-                    Thread.sleep(5000);
+                    Thread.sleep(500);
                 } catch (Exception e) {
                 }
             }

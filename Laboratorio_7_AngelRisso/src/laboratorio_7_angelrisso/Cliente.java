@@ -24,7 +24,7 @@ public class Cliente extends Thread {
         this.edad = edad;
         ord = new Ordenes();
         ordenes = new ArrayList<>();
-        avanzar = false;
+        avanzar = true;
         bandera = false;
     }
 
